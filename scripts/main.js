@@ -101,4 +101,38 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+
+  // ========================================================================
+  // SCROLL-TRIGGERED REVEAL ANIMATIONS
+  // ========================================================================
+  function setupScrollReveal() {
+    if (prefersReducedMotion) {
+      /* If reduced motion preferred, make all reveals visible immediately */
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('reveal--visible');
+      });
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          revealObserver.unobserve(entry.target); /* triggerOnce */
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+  }
+
+  setupScrollReveal();
+
+  /* Also remove the no-js class from html if JS is running */
+  document.documentElement.classList.remove('no-js');
 });
