@@ -12,6 +12,36 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <!-- Page sections will be added by subsequent tasks -->
+  <header class="nav" role="banner">
+    <div class="nav__container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-icon">⭐</span>
+        Little Stars Crèche
+      </a>
+      <button class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" role="navigation" aria-label="Main navigation">
+        <li><a href="#home" class="nav__link nav__link--active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#gallery" class="nav__link">Gallery</a></li>
+        <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li><a href="#contact" class="nav__cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="home"></section>
+    <section id="about"></section>
+    <section id="gallery"></section>
+    <section id="testimonials"></section>
+    <section id="contact"></section>
+  </main>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>
