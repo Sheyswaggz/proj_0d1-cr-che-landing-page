@@ -1,0 +1,225 @@
+/* ===================================================================
+   Little Stars Crèche - Core CSS Design System
+   A warm, nurturing visual foundation for childcare landing page
+   =================================================================== */
+
+/* ===================================================================
+   CSS Custom Properties - Design Tokens
+   =================================================================== */
+
+:root {
+  /* Color Palette - Warm & Nurturing */
+  --color-primary: #F9A825;           /* Warm golden yellow */
+  --color-primary-light: #FFF8E1;     /* Light yellow tint */
+  --color-secondary: #66BB6A;         /* Gentle green */
+  --color-secondary-light: #E8F5E9;   /* Light green tint */
+  --color-accent: #FF8A65;            /* Soft coral */
+  --color-bg: #FFFDF7;                /* Warm off-white */
+  --color-bg-alt: #FFF3E0;            /* Light peach */
+  --color-text: #3E2723;              /* Dark warm brown */
+  --color-text-light: #6D4C41;        /* Medium brown */
+  --color-white: #FFFFFF;             /* Pure white */
+  --color-border: #E0D6CC;            /* Subtle border color */
+
+  /* Typography */
+  --font-primary: 'Nunito', sans-serif;
+  --font-heading: 'Nunito', sans-serif;
+
+  /* Font Sizes */
+  --font-size-base: 1rem;             /* 16px */
+  --font-size-lg: 1.125rem;           /* 18px */
+  --font-size-xl: 1.5rem;             /* 24px */
+  --font-size-2xl: 2rem;              /* 32px */
+  --font-size-3xl: 2.5rem;            /* 40px */
+  --font-size-4xl: 3.5rem;            /* 56px */
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;               /* 8px */
+  --spacing-sm: 1rem;                 /* 16px */
+  --spacing-md: 1.5rem;               /* 24px */
+  --spacing-lg: 2rem;                 /* 32px */
+  --spacing-xl: 3rem;                 /* 48px */
+  --spacing-2xl: 5rem;                /* 80px */
+
+  /* Border Radius */
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(62, 39, 35, 0.08);
+  --shadow-md: 0 4px 16px rgba(62, 39, 35, 0.12);
+  --shadow-lg: 0 8px 32px rgba(62, 39, 35, 0.16);
+
+  /* Layout */
+  --max-width: 1200px;
+
+  /* Transitions */
+  --transition-base: 0.3s ease;
+}
+
+/* ===================================================================
+   CSS Reset & Base Styles
+   =================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================================================
+   Typography
+   =================================================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================================================
+   Layout Utilities
+   =================================================================== */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section-padding {
+  padding: var(--spacing-2xl) 0;
+}
+
+/* ===================================================================
+   Images & Media
+   =================================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===================================================================
+   Links
+   =================================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* ===================================================================
+   Buttons
+   =================================================================== */
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===================================================================
+   Accessibility - Screen Reader Only Content
+   =================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===================================================================
+   Responsive Design - Mobile First
+   =================================================================== */
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1.125rem;       /* 18px */
+    --font-size-4xl: 4rem;            /* 64px */
+  }
+
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-2xl: 6rem;              /* 96px */
+  }
+
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
