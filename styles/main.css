@@ -494,6 +494,94 @@ body {
 }
 
 /* ===================================================================
+   ABOUT / SERVICES SECTION
+   =================================================================== */
+
+.about {
+  background-color: var(--color-bg);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.about__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section__subtitle {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 4vw, var(--font-size-3xl));
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.section__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.service-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.service-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
    Responsive Design - Mobile First
    =================================================================== */
 
